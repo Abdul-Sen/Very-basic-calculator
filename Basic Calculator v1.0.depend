@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1525041915 source:c:\users\seneca cpa\desktop\c projects\basic calculator v1.0\main.c
+	<stdio.h>
+	<stdlib.h>
+
