@@ -4,17 +4,19 @@
 int main()
 {
     char user_input = 'A';
+    char buffer[255];
     float a = 0, b = 0, temp = 0;
-do{
-    printf("\nPlease choose what you want to do:\n A-)Addition(+)\n B-)Subtraction(-)\n C-)Multiplication(*)\n D-)Division(/)");
-    printf("\n Q-)Quit program\n >> ");
-    scanf(" %c", &user_input);
-
+    int counter = 0;
+    do {
+    if (counter>0)
+    gets(buffer);
+    /// ^Collecting trash
+    printf("\nPlease enter the operand you wish to use ( +, -, *, /), enter Q to quit >> ");
+    scanf("%c", &user_input);
     temp = 0;
     switch(user_input)
     {
-    case('A'):
-    case('a'):
+    case('+'):
         printf("\nPlease enter number 1 > " );
         scanf("%f", &a);
         printf("\nPlease enter number 2 > " );
@@ -23,8 +25,7 @@ do{
         printf("%.1f + %.1f = %.1f",a,b,temp);
         break;
 
-    case('b'):
-    case('B'):
+    case('-'):
         printf("\nPlease enter number 1 > " );
         scanf("%f", &a);
         printf("\nPlease enter number 2 > " );
@@ -33,8 +34,7 @@ do{
         printf("%.1f - %.1f = %.1f",a,b,temp);
         break;
 
-    case('c'):
-    case('C'):
+    case('*'):
         printf("\nPlease enter number 1 > " );
         scanf("%f", &a);
         printf("\nPlease enter number 2 > " );
@@ -43,8 +43,8 @@ do{
         printf("%.1f * %.1f = %.1f",a,b,temp);
         break;
 
-    case('D'):
-    case('d'):
+    case('/'):              ///No modulus implimentation for our basic calc
+    case('%'):
         printf("\nPlease enter number 1 > " );
         scanf("%f", &a);
         printf("\nPlease enter number 2 > " );
@@ -59,5 +59,6 @@ do{
     default:
         printf("\nERROR!");
     }
-}while (user_input!='Q' && user_input!='q');
+    counter++;
+    }while(user_input!='Q' && user_input!= 'q');
 }
